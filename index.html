@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadit Ajay | Portfolio</title>
+    <meta name="description"
+        content="Aadit Ajay - Community Builder, Project Manager, Strategist. Portfolio showcasing projects, experience, and leadership.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <img src="public/images/theme/moon/moon-icon-33-removebg-preview.png" alt="Toggle Theme" class="theme-toggle"
+        id="theme-toggle">
+    <div class="custom-cursor"></div>
+    <div class="logo">AA.</div>
+    <nav class="main-nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#expertise" class="nav-link">Expertise</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="public/docs/resume/Aadit Ajay_Resume.pdf.pdf" class="nav-link" download>
+            Resume 
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 15V3M12 15L8 11M12 15L16 11M21 21H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </nav>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Landing Section -->
+            <section class="landing" id="landing">
+                <div class="landing-content">
+                    <h1 class="hero-title">AADIT AJAY</h1>
+                    <p class="hero-subtitle">Community Builder • Project Manager • Strategist</p>
+                </div>
+
+                <div class="trusted-by">
+                    <p class="trusted-label" style="font-family: var(--font-body); font-weight: bold; font-size: 1rem;">
+                        TRUSTED BY</p>
+                    <div class="marquee">
+                        <div class="marquee-content">
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/1.png" class="marquee-logo light-logo" alt="Logo 1">
+                                <img src="public/images/logos/dark/1.png" class="marquee-logo dark-logo" alt="Logo 1">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/2.png" class="marquee-logo light-logo" alt="Logo 2">
+                                <img src="public/images/logos/dark/2.png" class="marquee-logo dark-logo" alt="Logo 2">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/3.png" class="marquee-logo light-logo" alt="Logo 3">
+                                <img src="public/images/logos/dark/3.png" class="marquee-logo dark-logo" alt="Logo 3">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/4.png" class="marquee-logo light-logo" alt="Logo 4">
+                                <img src="public/images/logos/dark/4.png" class="marquee-logo dark-logo" alt="Logo 4">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/5.png" class="marquee-logo light-logo" alt="Logo 5">
+                                <img src="public/images/logos/dark/5.png" class="marquee-logo dark-logo" alt="Logo 5">
+                            </div>
+                            <!-- Duplicates for seamless loop -->
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/1.png" class="marquee-logo light-logo" alt="Logo 1">
+                                <img src="public/images/logos/dark/1.png" class="marquee-logo dark-logo" alt="Logo 1">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/2.png" class="marquee-logo light-logo" alt="Logo 2">
+                                <img src="public/images/logos/dark/2.png" class="marquee-logo dark-logo" alt="Logo 2">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/3.png" class="marquee-logo light-logo" alt="Logo 3">
+                                <img src="public/images/logos/dark/3.png" class="marquee-logo dark-logo" alt="Logo 3">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/4.png" class="marquee-logo light-logo" alt="Logo 4">
+                                <img src="public/images/logos/dark/4.png" class="marquee-logo dark-logo" alt="Logo 4">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/5.png" class="marquee-logo light-logo" alt="Logo 5">
+                                <img src="public/images/logos/dark/5.png" class="marquee-logo dark-logo" alt="Logo 5">
+                            </div>
+                        </div>
+                        <div class="marquee-content" aria-hidden="true">
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/1.png" class="marquee-logo light-logo" alt="Logo 1">
+                                <img src="public/images/logos/dark/1.png" class="marquee-logo dark-logo" alt="Logo 1">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/2.png" class="marquee-logo light-logo" alt="Logo 2">
+                                <img src="public/images/logos/dark/2.png" class="marquee-logo dark-logo" alt="Logo 2">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/3.png" class="marquee-logo light-logo" alt="Logo 3">
+                                <img src="public/images/logos/dark/3.png" class="marquee-logo dark-logo" alt="Logo 3">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/4.png" class="marquee-logo light-logo" alt="Logo 4">
+                                <img src="public/images/logos/dark/4.png" class="marquee-logo dark-logo" alt="Logo 4">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/5.png" class="marquee-logo light-logo" alt="Logo 5">
+                                <img src="public/images/logos/dark/5.png" class="marquee-logo dark-logo" alt="Logo 5">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/1.png" class="marquee-logo light-logo" alt="Logo 1">
+                                <img src="public/images/logos/dark/1.png" class="marquee-logo dark-logo" alt="Logo 1">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/2.png" class="marquee-logo light-logo" alt="Logo 2">
+                                <img src="public/images/logos/dark/2.png" class="marquee-logo dark-logo" alt="Logo 2">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/3.png" class="marquee-logo light-logo" alt="Logo 3">
+                                <img src="public/images/logos/dark/3.png" class="marquee-logo dark-logo" alt="Logo 3">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/4.png" class="marquee-logo light-logo" alt="Logo 4">
+                                <img src="public/images/logos/dark/4.png" class="marquee-logo dark-logo" alt="Logo 4">
+                            </div>
+                            <div class="logo-wrapper">
+                                <img src="public/images/logos/light/5.png" class="marquee-logo light-logo" alt="Logo 5">
+                                <img src="public/images/logos/dark/5.png" class="marquee-logo dark-logo" alt="Logo 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-overlay" style="position: relative; z-index: 10;">
+                <!-- Scroll Interaction Image Section -->
+                <section class="image-transition" id="image-transition">
+                    <div class="image-container">
+                        <img src="public/images/profile/1000316202.jpg" alt="Aadit Ajay"
+                            class="portrait-img">
+                    </div>
+                </section>
+
+                <!-- About Section Overlay -->
+                <section class="about overlay" id="about">
+                    <div class="about-container">
+                        <div class="about-content-split">
+                            <div class="about-text-wrap">
+                                <h2 class="section-title" style="margin-bottom: 2rem;">About Me</h2>
+                                <p class="about-text">
+                                    I’m Aadit Ajay, a third-year Computer Science and Engineering student who naturally
+                                    steps
+                                    into roles where things need to be led, organized or built. I focus on creating
+                                    structured,
+                                    high-energy environments where people collaborate, execute ideas and grow together.
+                                </p>
+                                <p class="about-text">
+                                    My work revolves around managing communities, leading initiatives and turning intent
+                                    into
+                                    action — consistently building systems that sustain momentum and impact.
+                                </p>
+                            </div>
+                            <div class="about-image-wrap">
+                                <img src="public/images/about/1000316139 (2).png" alt="Aadit Ajay" class="about-img">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Expertise Section -->
+                <section class="expertise" id="expertise">
+                    <h2 class="section-title" style="text-align: center;">What I Do</h2>
+                    <div class="expertise-grid">
+                        <div class="expertise-pill">
+                            <h3>Project Manager</h3>
+                            <p class="pill-desc">Planning, organizing and executing initiatives with clarity, timelines
+                                and measurable outcomes.</p>
+                        </div>
+                        <div class="expertise-pill">
+                            <h3>Developer</h3>
+                            <p class="pill-desc">Engaging with Python and development concepts to build, understand and
+                                contribute to technical systems and workflows.</p>
+                        </div>
+                        <div class="expertise-pill">
+                            <h3>Public Speaker</h3>
+                            <p class="pill-desc">Engaging audiences, delivering ideas clearly and representing teams in
+                                high-impact environments.</p>
+                        </div>
+                        <div class="expertise-pill">
+                            <h3>Strategic Thinker</h3>
+                            <p class="pill-desc">Structuring ideas, aligning goals and ensuring execution follows a
+                                clear direction.</p>
+                        </div>
+                        <div class="expertise-pill">
+                            <h3>Community Builder</h3>
+                            <p class="pill-desc">Creating and scaling communities that encourage participation,
+                                collaboration and growth.</p>
+                        </div>
+                        <div class="expertise-pill">
+                            <h3>Team Coordinator</h3>
+                            <p class="pill-desc">Managing people, responsibilities and workflows to ensure smooth and
+                                efficient execution.</p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Experience Section -->
+                <section class="experience" id="experience">
+                    <h2 class="section-title">What I’ve Led</h2>
+                    <div class="experience-layout">
+
+                        <div class="experience-left">
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Project Management Intern</h3>
+                                        <p class="exp-org">µLearn Foundation</p>
+                                    </div>
+                                    <span class="exp-date">Feb 2026 – Present</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Driving end-to-end project execution including planning, task allocation,
+                                            and progress tracking</li>
+                                        <li>Collaborating with cross-functional teams across campuses, volunteers, and
+                                            partners</li>
+                                        <li>Aligning stakeholders, ensuring clarity in deliverables and timelines across
+                                            initiatives</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Campus Lead</h3>
+                                        <p class="exp-org">µLearn SBC</p>
+                                    </div>
+                                    <span class="exp-date">March 2026 – Present</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Leading campus-wide strategy and execution for one of the most active
+                                            student learning communities</li>
+                                        <li>Designing systems to improve onboarding, engagement, and retention</li>
+                                        <li>Managing teams and ensuring alignment with broader ecosystem goals</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Chairman</h3>
+                                        <p class="exp-org">Industry Applications Society, IEEE SB SBCE</p>
+                                    </div>
+                                    <span class="exp-date">March 2026 – Present</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Driving industry-focused initiatives connecting students with real-world
+                                            applications</li>
+                                        <li>Organizing high-impact sessions, collaborations, and technical engagements
+                                        </li>
+                                        <li>Strengthening the applied learning culture within IEEE</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">District Lead - Alappuzha</h3>
+                                        <p class="exp-org">µLearn Foundation</p>
+                                    </div>
+                                    <span class="exp-date">Aug 2025 – Present</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Overseeing operations across 5+ campuses, ensuring smooth coordination and
+                                            execution</li>
+                                        <li>Building and scaling a campus lead network improving inter-campus
+                                            collaboration</li>
+                                        <li>Enabling leadership growth across institutions through structured support
+                                            systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Strategic Team Lead</h3>
+                                        <p class="exp-org">The Purple Movement</p>
+                                    </div>
+                                    <span class="exp-date">May 2025 – Dec 2025</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Executed strategies for large-scale, student-driven initiatives</li>
+                                        <li>Contributed to frameworks redefining community-powered learning</li>
+                                        <li>Worked closely with cross-community leaders to drive unified impact</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Campus Co-Lead</h3>
+                                        <p class="exp-org">µLearn SBC</p>
+                                    </div>
+                                    <span class="exp-date">Jan 2025 – Jan 2026</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Organized 15+ campus-wide events and challenges engaging 100+ students</li>
+                                        <li>Led a 15-member core team handling planning, logistics, and communication
+                                        </li>
+                                        <li>Strengthened execution systems for consistent and scalable operations</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Membership Development Coordinator</h3>
+                                        <p class="exp-org">IEEE SBCE</p>
+                                    </div>
+                                    <span class="exp-date">Feb 2025 – Feb 2026</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Led outreach strategies increasing engagement by 60% within a year</li>
+                                        <li>Designed and executed initiatives improving participation and visibility
+                                        </li>
+                                        <li>Built structured communication channels within the student branch</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <div class="exp-header-row">
+                                    <div class="exp-role-org">
+                                        <h3 class="exp-role">Digital Marketing Intern</h3>
+                                        <p class="exp-org">µLearn Foundation</p>
+                                    </div>
+                                    <span class="exp-date">Aug 2025 – Jan 2026</span>
+                                </div>
+                                <div class="exp-details">
+                                    <ul class="exp-bullets">
+                                        <li>Managed digital operations for a community of 50,000+ learners across Kerala
+                                        </li>
+                                        <li>Streamlined content workflows, reducing turnaround time</li>
+                                        <li>Coordinated with multiple creative teams ensuring consistent branding and
+                                            delivery</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="experience-right">
+                            <ul class="metrics-list">
+                                <li><span class="counter" data-target="10">0</span>+ Projects Led</li>
+                                <li><span class="counter" data-target="35">0</span>+ Events Managed</li>
+                                <li><span class="counter" data-target="5">0</span>+ Communities Driven</li>
+                                <li><span class="counter" data-target="500">0</span>+ Students Engaged</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="education" id="education">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-columns">
+                        <div class="edu-col">
+                            <h3>Sree Buddha College of Engineering</h3>
+                            <p class="edu-degree">B.Tech in Computer Science and Engineering</p>
+                            <p class="edu-year">2023 – 2027</p>
+                        </div>
+                        <div class="edu-col right">
+                            <h3>Sree Buddha Central School</h3>
+                            <p class="edu-degree">Computer Science Stream</p>
+                            <p class="edu-year">Graduated 2023</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="contact" id="contact">
+                    <div class="contact-content">
+                        <h2 class="closing-line">Let’s build something meaningful.</h2>
+                        <div class="contact-links">
+                            <a href="mailto:aaditajay@gmail.com" class="contact-link">aaditajay@gmail.com</a>
+                            <a href="tel:9562321151" class="contact-link">9562321151</a>
+                            <div class="linkedin-input">
+                                <input type="text" placeholder="LinkedIn Profile URL" readonly
+                                    value="linkedin.com/in/aaditajay" class="premium-input">
+                                <button class="premium-btn">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <p>&copy; 2026 Aadit Ajay. All rights reserved.</p>
+                    </footer>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
