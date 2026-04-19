@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to('.landing', {
         scrollTrigger: {
             trigger: '.image-transition',
-            start: 'top 40%', // starts almost immediately due to negative margin
-            end: 'top -100%', // blurred very slowly in the background
+            start: 'top 50%', // blur starts only after image is well into view
+            end: 'top -100%',
             scrub: true,
         },
         filter: 'blur(20px)',
@@ -85,18 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.image-transition',
-            start: 'top 35%', // start right after hero starts to move
-            end: 'top 10%', // arrive and center while background is still blurring
-            scrub: 1, // smooth scrubbing
+            start: 'top 100%', // image starts rising from below the screen
+            end: 'top 20%', // finish as it centers
+            scrub: 1, 
         }
     });
 
-    // 1. First, bring it up and fade it in
+    // 1. First, bring it up from deep and fade it in
     tl.fromTo('.portrait-img', 
         { 
-            y: 200, 
+            y: 400, // start deep below screen
             opacity: 0, 
-            scale: 0.8,
+            scale: 0.7,
             rotationY: -90
         }, 
         { 
