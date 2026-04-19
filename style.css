@@ -900,3 +900,149 @@ body.dark-mode .expertise-pill:hover {
     width: 40px;
     height: 40px;
 }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    /* General Reset for Mobile */
+    * {
+        cursor: auto !important;
+    }
+    body {
+        cursor: auto;
+    }
+    .custom-cursor {
+        display: none !important;
+    }
+
+    section {
+        padding: 4rem 5%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    /* Header & Nav */
+    .logo {
+        top: 1.5rem;
+        left: 1.5rem;
+        font-size: 1.5rem;
+    }
+    .theme-toggle {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 30px;
+        height: 30px;
+    }
+    .main-nav {
+        top: auto;
+        bottom: 1.5rem;
+        width: 90%;
+        background: var(--card-bg);
+        padding: 1rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body.dark-mode .main-nav {
+        border: 1px solid var(--border-color);
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+    .landing {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 8rem;
+    }
+    .trusted-by {
+        position: relative;
+        bottom: auto;
+        margin-top: 4rem;
+    }
+
+    /* About Section */
+    .about.overlay {
+        padding: 4rem 5%;
+        margin-top: -15vh;
+    }
+    .about-container {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+    .about-content-split {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    .about-img {
+        max-width: 100%;
+    }
+
+    /* Expertise Section */
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+    .expertise-pill {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Experience Section */
+    .experience-layout {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+    .experience-right {
+        position: static;
+        margin-top: 2rem;
+        width: 100%;
+    }
+    .metrics-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+    .metrics-list li {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    /* Education Section */
+    .education-columns {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .edu-col {
+        padding: 2rem 1.5rem;
+    }
+    .edu-col.right {
+        text-align: left;
+    }
+
+    /* Contact Section */
+    .closing-line {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+    .social-icons-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .contact-bar {
+        min-width: unset;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        text-align: center;
+        border-radius: 25px;
+    }
+    .contact-bar-wrap {
+        width: 100%;
+    }
+}
