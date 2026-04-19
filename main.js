@@ -91,21 +91,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    tl.to(portraitImg, {
-        opacity: 1,
-        rotationY: 0, // rotate horizontally to front
-        scale: 1,
-        y: 0,
-        ease: 'power2.out',
-        duration: 2
-    })
-    // .to(portraitImg, {
-    //     rotationY: 180, // optionally keep rotating if we scroll further
-    //     scale: 0.8,
-    //     opacity: 0,
-    //     duration: 1,
-    //     ease: 'power1.in'
-    // }, "+=1");
+    // 1. First, bring it up and fade it in
+    tl.fromTo('.portrait-img', 
+        { 
+            y: 200, 
+            opacity: 0, 
+            scale: 0.8,
+            rotationY: -90
+        }, 
+        { 
+            y: 0, 
+            opacity: 1, 
+            scale: 1,
+            ease: "power1.out",
+            duration: 1
+        }
+    );
+
+    // 2. Delay the rotation to happen as it settles (offset by 0.4s into the 1s timeline)
+    tl.to('.portrait-img', {
+        rotationY: 0,
+        ease: "power1.inOut",
+        duration: 0.6
+    }, 0.4);
 
     // 5. About Overlay slide up effect
     // As we scroll past the image, the About section slides over
