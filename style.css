@@ -226,10 +226,9 @@ body.dark-mode .nav-link:hover {
 
 .section-title {
     font-family: 'TitleFont', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
+    font-size: clamp(2.5rem, 5vw, 3.2rem); /* Reduced from 4.5rem max */
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
 }
 
 /* --- Theme Toggle --- */
@@ -423,9 +422,9 @@ body.dark-mode .dark-logo {
 }
 
 .about-text {
-    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    font-size: clamp(1rem, 2vw, 1.4rem); /* Reduced from 1.8rem max */
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
     font-weight: 300;
 }
@@ -755,6 +754,86 @@ body.dark-mode .expertise-pill:hover {
     transform-origin: bottom left;
 }
 
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin: 3rem 0;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.social-icon:hover {
+    color: var(--text-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--text-color);
+}
+
+.social-icon.active {
+    color: var(--text-color);
+    border-color: var(--text-color);
+    background: var(--accent-color);
+}
+
+.contact-bar-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    perspective: 1000px;
+}
+
+.contact-bar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-width: 400px;
+    justify-content: space-between;
+    transition: all var(--transition-smooth);
+    opacity: 0.8;
+}
+
+.bar-username {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+.bar-connect-btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.bar-connect-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 .linkedin-input {
     display: flex;
     gap: 1rem;
@@ -794,11 +873,11 @@ body.dark-mode .expertise-pill:hover {
 }
 
 .footer {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
     text-align: center;
-    padding: 2rem 0;
-    color: #555;
-    font-size: 0.9rem;
     border-top: 1px solid var(--border-color);
+    margin-top: 5rem;
 }
 
 /* --- Custom Cursor --- */

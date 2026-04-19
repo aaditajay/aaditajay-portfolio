@@ -243,10 +243,89 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     renderCursor();
     
-    const hoverElements = document.querySelectorAll('a, button, .exp-item, .expertise-pill, #theme-toggle');
+    const hoverElements = document.querySelectorAll('a, button, .exp-item, .expertise-pill, #theme-toggle, .social-icon');
     hoverElements.forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+    });
+
+    // --- Logo Click to Top ---
+    const headerLogo = document.getElementById('header-logo');
+    if (headerLogo) {
+        headerLogo.addEventListener('click', () => {
+            lenis.scrollTo(0);
+        });
+    }
+
+    // --- Contact Social Icons Interactivity ---
+    const socialIcons = document.querySelectorAll('.social-icon');
+    const barUsername = document.getElementById('bar-username');
+    const barConnectBtn = document.getElementById('bar-connect-btn');
+    const contactBar = document.getElementById('contact-bar');
+
+    let fixedPlatform = null;
+
+    socialIcons.forEach(icon => {
+        const platform = icon.dataset.platform;
+        const username = icon.dataset.user;
+        const link = icon.dataset.link;
+
+        // Hover Effect
+        icon.addEventListener('mouseenter', () => {
+            if (!fixedPlatform) {
+                barUsername.textContent = username;
+                barConnectBtn.href = link;
+                contactBar.style.opacity = "1";
+                contactBar.style.borderColor = "var(--text-color)";
+            }
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            if (!fixedPlatform) {
+                barUsername.textContent = "Select a platform";
+                barConnectBtn.href = "#";
+                contactBar.style.opacity = "0.8";
+                contactBar.style.borderColor = "var(--border-color)";
+            }
+        });
+
+        // Click Logic
+        icon.addEventListener('click', () => {
+            // Toggle active state
+            socialIcons.forEach(i => i.classList.remove('active'));
+            
+            if (fixedPlatform === platform) {
+                // Deselect if already active
+                fixedPlatform = null;
+                barUsername.textContent = "Select a platform";
+                barConnectBtn.href = "#";
+                contactBar.style.opacity = "0.8";
+                contactBar.style.borderColor = "var(--border-color)";
+            } else {
+                // Select new platform
+                fixedPlatform = platform;
+                icon.classList.add('active');
+                barUsername.textContent = username;
+                barConnectBtn.href = link;
+                contactBar.style.opacity = "1";
+                contactBar.style.borderColor = "var(--text-color)";
+                
+                // Visual feedback for click
+                gsap.fromTo(contactBar, 
+                    { scale: 0.98 }, 
+                    { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.3)" }
+                );
+            }
+        });
+    });
+
+    // Handle "Connect" click to ensure it only redirects if a link is set
+    barConnectBtn.addEventListener('click', (e) => {
+        if (barConnectBtn.getAttribute('href') === "#") {
+            e.preventDefault();
+            // Subtle shake if no platform selected
+            gsap.to(contactBar, { x: 5, repeat: 3, yoyo: true, duration: 0.05, onComplete: () => gsap.to(contactBar, { x: 0 }) });
+        }
     });
 
 });

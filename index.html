@@ -12,6 +12,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="public/images/icon/Slide 4_3 - 1.png">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 
     <!-- Lenis for Smooth Scrolling -->
@@ -25,7 +30,7 @@
     <img src="public/images/theme/moon/moon-icon-33-removebg-preview.png" alt="Toggle Theme" class="theme-toggle"
         id="theme-toggle">
     <div class="custom-cursor"></div>
-    <div class="logo">AA.</div>
+    <div class="logo" id="header-logo" style="cursor: pointer;">AA.</div>
     <nav class="main-nav">
         <a href="#about" class="nav-link">About</a>
         <a href="#expertise" class="nav-link">Expertise</a>
@@ -405,13 +410,26 @@
                 <section class="contact" id="contact">
                     <div class="contact-content">
                         <h2 class="closing-line">Let’s build something meaningful.</h2>
-                        <div class="contact-links">
-                            <a href="mailto:aaditajay@gmail.com" class="contact-link">aaditajay@gmail.com</a>
-                            <a href="tel:9562321151" class="contact-link">9562321151</a>
-                            <div class="linkedin-input">
-                                <input type="text" placeholder="LinkedIn Profile URL" readonly
-                                    value="linkedin.com/in/aaditajay" class="premium-input">
-                                <button class="premium-btn">Connect</button>
+                        
+                        <div class="social-icons-container">
+                            <div class="social-icon" data-platform="instagram" data-user="instagram.com/sulthaaaannnn" data-link="https://www.instagram.com/sulthaaaannnn/">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="social-icon" data-platform="linkedin" data-user="linkedin.com/in/aaditajay" data-link="https://www.linkedin.com/in/aaditajay/">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="social-icon" data-platform="gmail" data-user="aaditajay@gmail.com" data-link="mailto:aaditajay@gmail.com">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="social-icon" data-platform="x" data-user="x.com/AaditAjay" data-link="https://x.com/AaditAjay">
+                                <i class="fab fa-x-twitter"></i>
+                            </div>
+                        </div>
+
+                        <div class="contact-bar-wrap">
+                            <div class="contact-bar" id="contact-bar">
+                                <span class="bar-username" id="bar-username">Select a platform</span>
+                                <a href="#" class="bar-connect-btn" id="bar-connect-btn">Connect</a>
                             </div>
                         </div>
                     </div>
