@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: '.image-transition',
             start: 'top 95%',
-            end: 'top 20%',
+            end: 'top -50%', // blurred slowly over a longer distance
             scrub: true,
         },
         filter: 'blur(20px)',
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: '.image-transition',
             start: 'top 95%', 
-            end: 'top 30%', 
+            end: 'top 55%', // finish arriving much sooner
             scrub: 1, // smooth scrubbing
         }
     });
