@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to('.landing', {
         scrollTrigger: {
             trigger: '.image-transition',
-            start: 'top 95%',
-            end: 'top -50%', // blurred slowly over a longer distance
+            start: 'top 40%', // starts almost immediately due to negative margin
+            end: 'top -100%', // blurred very slowly in the background
             scrub: true,
         },
         filter: 'blur(20px)',
@@ -85,8 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.image-transition',
-            start: 'top 95%', 
-            end: 'top 40%', // slightly more distance for slower feel
+            start: 'top 35%', // start right after hero starts to move
+            end: 'top 10%', // arrive and center while background is still blurring
             scrub: 1, // smooth scrubbing
         }
     });

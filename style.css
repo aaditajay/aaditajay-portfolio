@@ -346,11 +346,13 @@ body.dark-mode .dark-logo {
 
 /* --- Scroll Image Transition Section --- */
 .image-transition {
-    height: 120vh; /* Reduced from 200vh for continuous flow */
+    height: 120vh;
     position: relative;
+    margin-top: -70vh; /* Pull up significantly to start almost immediately */
     padding: 0;
     z-index: 10;
-    pointer-events: none; /* Let scroll pass through */
+    pointer-events: none;
+    perspective: 1500px; /* Enhanced 3D depth for the rotation */
 }
 
 .image-container {
