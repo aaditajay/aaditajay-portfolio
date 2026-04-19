@@ -264,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactBar = document.getElementById('contact-bar');
 
     let fixedPlatform = null;
+    let activeLink = "#";
 
     socialIcons.forEach(icon => {
         const platform = icon.dataset.platform;
@@ -274,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon.addEventListener('mouseenter', () => {
             if (!fixedPlatform) {
                 barUsername.textContent = username;
-                barConnectBtn.href = link;
+                activeLink = link;
                 contactBar.style.opacity = "1";
                 contactBar.style.borderColor = "var(--text-color)";
             }
@@ -283,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon.addEventListener('mouseleave', () => {
             if (!fixedPlatform) {
                 barUsername.textContent = "Select a platform";
-                barConnectBtn.href = "#";
+                activeLink = "#";
                 contactBar.style.opacity = "0.8";
                 contactBar.style.borderColor = "var(--border-color)";
             }
@@ -291,26 +292,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Click Logic
         icon.addEventListener('click', () => {
-            // Toggle active state
             socialIcons.forEach(i => i.classList.remove('active'));
             
             if (fixedPlatform === platform) {
-                // Deselect if already active
                 fixedPlatform = null;
                 barUsername.textContent = "Select a platform";
-                barConnectBtn.href = "#";
+                activeLink = "#";
                 contactBar.style.opacity = "0.8";
                 contactBar.style.borderColor = "var(--border-color)";
             } else {
-                // Select new platform
                 fixedPlatform = platform;
                 icon.classList.add('active');
                 barUsername.textContent = username;
-                barConnectBtn.href = link;
+                activeLink = link;
                 contactBar.style.opacity = "1";
                 contactBar.style.borderColor = "var(--text-color)";
                 
-                // Visual feedback for click
                 gsap.fromTo(contactBar, 
                     { scale: 0.98 }, 
                     { scale: 1, duration: 0.4, ease: "elastic.out(1, 0.3)" }
@@ -319,12 +316,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Handle "Connect" click to ensure it only redirects if a link is set
+    // Handle "Connect" click using window.open
     barConnectBtn.addEventListener('click', (e) => {
-        if (barConnectBtn.getAttribute('href') === "#") {
-            e.preventDefault();
+        e.preventDefault();
+        
+        if (activeLink && activeLink !== "#") {
+            if (activeLink.startsWith('mailto:')) {
+                window.location.href = activeLink;
+            } else {
+                window.open(activeLink, '_blank');
+            }
+        } else {
             // Subtle shake if no platform selected
-            gsap.to(contactBar, { x: 5, repeat: 3, yoyo: true, duration: 0.05, onComplete: () => gsap.to(contactBar, { x: 0 }) });
+            gsap.to(contactBar, { 
+                x: 5, 
+                repeat: 3, 
+                yoyo: true, 
+                duration: 0.05, 
+                onComplete: () => gsap.to(contactBar, { x: 0 }) 
+            });
         }
     });
 
