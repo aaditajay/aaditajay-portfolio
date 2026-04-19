@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: '.image-transition',
             start: 'top 95%', 
-            end: 'top 55%', // finish arriving much sooner
+            end: 'top 40%', // slightly more distance for slower feel
             scrub: 1, // smooth scrubbing
         }
     });
@@ -108,12 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-    // 2. Delay the rotation to happen as it settles (offset by 0.4s into the 1s timeline)
+    // 2. Slow down the rotation - start earlier and last longer
     tl.to('.portrait-img', {
         rotationY: 0,
         ease: "power1.inOut",
-        duration: 0.6
-    }, 0.4);
+        duration: 0.9
+    }, 0.1);
 
     // 5. About Overlay slide up effect
     // As we scroll past the image, the About section slides over
