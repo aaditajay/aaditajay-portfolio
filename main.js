@@ -108,12 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-    // 2. Slow down the rotation - start earlier and last longer
+    // 2. Delay the rotation - start halfway through the entry so it's fully visible
     tl.to('.portrait-img', {
         rotationY: 0,
         ease: "power1.inOut",
-        duration: 0.9
-    }, 0.1);
+        duration: 0.5
+    }, 0.5);
 
     // 5. About Overlay slide up effect
     // As we scroll past the image, the About section slides over
