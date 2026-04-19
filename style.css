@@ -345,12 +345,12 @@ body.dark-mode .dark-logo {
 
 /* --- Scroll Image Transition Section --- */
 .image-transition {
-    height: 120vh;
+    height: 80vh; /* Shorter height so the next section follows sooner */
     position: relative;
     padding: 0;
     z-index: 10;
     pointer-events: none;
-    perspective: 1500px; /* Keep the 3D depth */
+    perspective: 1500px;
 }
 
 .image-container {
