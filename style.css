@@ -901,14 +901,21 @@ body.dark-mode .expertise-pill:hover {
     gap: 0.5rem;
 }
 
-.ag-logo {
-    font-family: 'Enigma Display', sans-serif;
-    font-weight: bold;
-    color: var(--text-color);
-    letter-spacing: 0.05em;
-    display: flex;
+.ag-logo-wrapper {
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 0.2rem;
+}
+
+.ag-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: opacity var(--transition-smooth);
 }
 
 .fa-figma {
