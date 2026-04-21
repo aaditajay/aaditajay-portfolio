@@ -875,9 +875,48 @@ body.dark-mode .expertise-pill:hover {
 .footer {
     padding-top: 5rem;
     padding-bottom: 2rem;
-    text-align: center;
     border-top: 1px solid var(--border-color);
     margin-top: 5rem;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-left p, .footer-right p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ag-logo {
+    font-family: 'Enigma Display', sans-serif;
+    font-weight: bold;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.fa-figma {
+    color: #F24E1E;
+}
+
+.fa-mug-hot {
+    color: #8D6E63;
 }
 
 /* --- Custom Cursor --- */
@@ -1025,7 +1064,7 @@ body.dark-mode .expertise-pill:hover {
         text-align: left;
     }
 
-    /* Contact Section */
+    /* Contact Section & Footer */
     .closing-line {
         font-size: clamp(2.5rem, 10vw, 3.5rem);
     }
@@ -1044,5 +1083,12 @@ body.dark-mode .expertise-pill:hover {
     }
     .contact-bar-wrap {
         width: 100%;
+    }
+    .footer-content {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-left p, .footer-right p {
+        justify-content: center;
     }
 }
