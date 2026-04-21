@@ -1,18 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
     // 0. Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
+    const favicon = document.getElementById('favicon');
     const body = document.body;
-    let isDarkMode = false;
+    
+    const updateThemeAssets = (isDark) => {
+        if (isDark) {
+            themeToggle.src = 'public/images/theme/sun/pngtree-vector-sun-icon-png-image_1638731-removebg-preview.png';
+            favicon.href = 'public/images/icon/dark_favicon.png';
+        } else {
+            themeToggle.src = 'public/images/theme/moon/moon-icon-33-removebg-preview.png';
+            favicon.href = 'public/images/icon/light_favicon.png';
+        }
+    };
+
+    // Initialize state
+    let isDarkMode = body.classList.contains('dark-mode');
+    updateThemeAssets(isDarkMode);
     
     themeToggle.addEventListener('click', () => {
         isDarkMode = !isDarkMode;
-        if (isDarkMode) {
-            body.classList.add('dark-mode');
-            themeToggle.src = 'public/images/theme/sun/pngtree-vector-sun-icon-png-image_1638731-removebg-preview.png';
-        } else {
-            body.classList.remove('dark-mode');
-            themeToggle.src = 'public/images/theme/moon/moon-icon-33-removebg-preview.png';
-        }
+        body.classList.toggle('dark-mode', isDarkMode);
+        updateThemeAssets(isDarkMode);
     });
 
     // 1. Initialize Lenis for Smooth Scrolling
