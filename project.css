@@ -230,22 +230,23 @@ canvas#project-canvas {
 .event-bubbles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.2rem;
     margin-top: 3rem;
+    max-width: 600px;
 }
 
 .event-bubble {
     background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 16px;
+    padding: 1.2rem;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .event-bubble span {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text-color);
     opacity: 0.5;
     text-transform: uppercase;
@@ -253,7 +254,7 @@ canvas#project-canvas {
 }
 
 .event-bubble strong {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text-color);
     font-weight: 500;
 }
