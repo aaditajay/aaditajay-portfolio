@@ -1,6 +1,7 @@
 /* --- Project Page Styling (Subtle & Clean) --- */
 
 .project-page-wrapper {
+    padding-top: 6rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,7 +10,7 @@
 /* Banner / Video Frame Area */
 .project-banner {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     background: #000;
     overflow: hidden;
     position: relative;
@@ -22,7 +23,7 @@
 canvas#project-canvas {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .project-container {
