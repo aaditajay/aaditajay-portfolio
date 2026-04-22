@@ -27,8 +27,6 @@ canvas#project-canvas {
 }
 
 .project-container {
-    max-width: 1000px;
-    margin: 0 auto;
     padding: 4rem 5% 8rem 5%;
     flex: 1;
     width: 100%;
