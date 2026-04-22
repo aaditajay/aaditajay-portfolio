@@ -653,6 +653,18 @@ body.dark-mode .expertise-pill:hover {
     padding-top: 4rem;
 }
 
+.build-box {
+    background: var(--bg-color);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.build-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .build-box:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);

@@ -227,6 +227,19 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: 'power4.out'
     });
 
+    gsap.from('.build-box', {
+        scrollTrigger: {
+            trigger: '.build-columns',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+        },
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power4.out'
+    });
+
     // 8. Custom Cursor
     const cursor = document.querySelector('.custom-cursor');
     let mouseX = window.innerWidth / 2;
