@@ -131,6 +131,52 @@ canvas#project-canvas {
     margin-bottom: 1rem;
 }
 
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    width: max-content;
+    gap: 0.8rem;
+}
+
+.pill-btn .arrow-diag {
+    opacity: 1;
+}
+
+.pill-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.backend-link {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.4;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity var(--transition-fast);
+}
+
+.backend-link:hover {
+    opacity: 0.8;
+}
+
 .team-list {
     list-style: none;
     padding: 0;

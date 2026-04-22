@@ -671,13 +671,11 @@ body.dark-mode .expertise-pill:hover {
 }
 
 .build-box:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     background: var(--card-hover);
 }
 
 body.dark-mode .build-box:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: var(--card-hover);
 }
 
 /* --- Education Section --- */
