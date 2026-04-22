@@ -1,0 +1,181 @@
+/* --- Project Page Styling --- */
+
+.project-page-wrapper {
+    padding-top: 8rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    flex: 1;
+    width: 100%;
+}
+
+/* Header */
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
+.project-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.project-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-title-area {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin: 0;
+    line-height: 1;
+}
+
+.project-subtitle {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* About Section */
+.project-about {
+    margin-bottom: 6rem;
+    padding: 0;
+}
+
+.project-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+}
+
+.project-text-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Media (Canvas animation) */
+.project-media {
+    margin-bottom: 6rem;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid var(--border-color);
+    position: relative;
+    height: 60vh;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    padding: 0;
+}
+
+.frame-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas#project-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Teammates */
+.project-team {
+    margin-bottom: 8rem;
+    padding: 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.team-member {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all var(--transition-smooth);
+}
+
+.team-member span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.arrow-diag {
+    transform: rotate(-45deg);
+    transition: transform var(--transition-fast);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .team-member:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.team-member:hover .arrow-diag {
+    transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+    .project-logo {
+        width: 100px;
+        height: 100px;
+    }
+    .project-media {
+        height: 40vh;
+    }
+}

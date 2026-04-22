@@ -638,6 +638,31 @@ body.dark-mode .expertise-pill:hover {
     color: #888;
 }
 
+/* --- Build Log Section --- */
+.build-log {
+    background-color: var(--bg-color);
+    z-index: 10;
+    padding-bottom: 2rem;
+}
+
+.build-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 4rem;
+}
+
+.build-box:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: var(--card-hover);
+}
+
+body.dark-mode .build-box:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
 /* --- Education Section --- */
 
 .education {
