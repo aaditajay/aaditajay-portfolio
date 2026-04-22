@@ -16,21 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Initialize GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
-
     lenis.on('scroll', ScrollTrigger.update);
-
-    gsap.ticker.add((time)=>{
-      lenis.raf(time * 1000);
-    });
-
+    gsap.ticker.add((time)=>{ lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0, 0);
 
-    // 3. Canvas Frame Sequence Animation
+    // 3. Canvas Frame Sequence Animation (Auto-play loop)
     const canvas = document.getElementById("project-canvas");
     if (canvas) {
         const context = canvas.getContext("2d");
 
-        // Set high resolution for canvas
+        // High resolution for clear display
         canvas.width = 1920;
         canvas.height = 1080;
 
@@ -40,22 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const images = [];
-        const imageSeq = {
-            frame: 0
-        };
+        let loadedImages = 0;
+        let currentFrameIndex = 0;
+        let isPlaying = false;
 
-        // Preload images
-        for (let i = 0; i < frameCount; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
-            images.push(img);
-        }
-
-        // Render function
-        function render() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            const img = images[imageSeq.frame];
+        // Render specific frame
+        function renderFrame(index) {
+            const img = images[index];
             if (img && img.complete) {
+                // Clear canvas
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                
                 // Draw image scaled to fit canvas covering it (like object-fit: cover)
                 const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
                 const x = (canvas.width / 2) - (img.width / 2) * scale;
@@ -64,25 +54,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        images[0].onload = render;
+        // Loop animation loop at 30 fps (~33ms per frame)
+        function playFrames() {
+            renderFrame(currentFrameIndex);
+            currentFrameIndex = (currentFrameIndex + 1) % frameCount;
+            setTimeout(() => {
+                requestAnimationFrame(playFrames);
+            }, 33); // Adjust for playback speed
+        }
 
-        // Create ScrollTrigger to animate frames
-        gsap.to(imageSeq, {
-            frame: frameCount - 1,
-            snap: "frame",
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".project-media",
-                start: "top 10%", // Pin when the section reaches top 10% of viewport
-                end: "+=3000", // Scroll distance for the animation
-                scrub: 0.5,
-                pin: true
-            },
-            onUpdate: render
-        });
-        
-        // Initial render fallback if onload misses
-        setTimeout(render, 500);
+        // Preload images
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            img.onload = () => {
+                loadedImages++;
+                // When at least 10 images are loaded, start playing so we don't wait forever
+                if (loadedImages === 10 && !isPlaying) {
+                    isPlaying = true;
+                    playFrames();
+                }
+            };
+            images.push(img);
+        }
     }
 
     // 4. Custom Cursor
@@ -111,15 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         renderCursor();
         
-        const hoverElements = document.querySelectorAll('a, button, .team-member');
+        const hoverElements = document.querySelectorAll('a, button');
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
         });
     }
 
-    // 5. Initial Animations
+    // 5. Initial Entrance Animations
     gsap.from('.project-logo', { y: 30, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
     gsap.from('.project-title-area', { y: 30, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.4 });
-    gsap.from('.project-text-content p', { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: 'power3.out', delay: 0.6 });
+    gsap.from('.project-text-content p, .info-block', { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: 'power3.out', delay: 0.6 });
 });

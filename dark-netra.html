@@ -28,12 +28,17 @@
     <a href="index.html" class="logo" style="text-decoration: none; cursor: pointer;">AA.</a>
     
     <div class="project-page-wrapper">
+        
+        <!-- Banner (Video frames play here automatically) -->
+        <div class="project-banner">
+            <canvas id="project-canvas"></canvas>
+        </div>
+
         <div class="project-container">
-            
             <!-- Header -->
             <header class="project-header">
                 <div class="project-logo">
-                    <img src="public/images/build/darknetra/logo/iPhone 14 Plus - 1 (1).png" alt="Dark Netra Logo">
+                    <img src="public/images/build/darknetra/logo/logo.png" alt="Dark Netra Logo">
                 </div>
                 <div class="project-title-area">
                     <h1 class="project-title">Dark Netra</h1>
@@ -41,43 +46,29 @@
                 </div>
             </header>
 
-            <!-- About -->
-            <section class="project-about">
-                <h2 class="section-title">About the Project</h2>
-                <div class="project-text-content">
-                    <p>Dark Netra started from a simple frustration, the internet is full of links you just can't trust. I wanted to build something that didn't just flag a URL as dangerous, but actually explained why. That thinking led to Dark Netra: an intelligent malicious URL detection system that combines machine learning with a clean, accessible interface.</p>
-                    <p>I led the project from concept to deployment, working alongside a talented team who brought it to life across frontend, backend, and ML. The goal was always to make something that felt real and usable, not just a college project that lives in a zip file.</p>
-                    <p>Under the hood, Dark Netra analyzes input URLs using trained ML models to classify them as Safe, Suspicious, or Malicious and surfaces the reasoning behind each result. Built on React.js for the frontend and FastAPI/Flask on the backend, with Scikit learn powering the predictions, the system was designed to be fast, reliable, and easy to understand for non-technical users too.</p>
-                    <p>It's deployed and live. And it's just version one.</p>
-                </div>
-            </section>
+            <div class="project-layout">
+                <!-- Left Sidebar: Teammates Info -->
+                <aside class="project-sidebar">
+                    <div class="info-block">
+                        <h4>Teammates</h4>
+                        <ul class="team-list">
+                            <li><a href="https://www.linkedin.com/in/adhithyan-s-pillai-35639836a/" target="_blank">Adhithyan S Pillai <i class="fa-solid fa-arrow-right arrow-diag"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/ebin-reji/" target="_blank">Ebin Reji <i class="fa-solid fa-arrow-right arrow-diag"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/unnimalu-j-8408b8255/" target="_blank">Unnimalu J <i class="fa-solid fa-arrow-right arrow-diag"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
 
-            <!-- Media (Frames Animation) -->
-            <section class="project-media">
-                <div class="frame-container" id="frame-container">
-                    <canvas id="project-canvas"></canvas>
-                </div>
-            </section>
-
-            <!-- Teammates -->
-            <section class="project-team">
-                <h2 class="section-title">Teammates</h2>
-                <div class="team-grid">
-                    <a href="https://www.linkedin.com/in/adhithyan-s-pillai-35639836a/" target="_blank" class="team-member">
-                        <span>Adhithyan S Pillai</span>
-                        <i class="fa-solid fa-arrow-right arrow-diag"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ebin-reji/" target="_blank" class="team-member">
-                        <span>Ebin Reji</span>
-                        <i class="fa-solid fa-arrow-right arrow-diag"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/unnimalu-j-8408b8255/" target="_blank" class="team-member">
-                        <span>Unnimalu J</span>
-                        <i class="fa-solid fa-arrow-right arrow-diag"></i>
-                    </a>
-                </div>
-            </section>
-
+                <!-- Right Main: Description -->
+                <main class="project-main">
+                    <div class="project-text-content">
+                        <p>Dark Netra started from a simple frustration, the internet is full of links you just can't trust. I wanted to build something that didn't just flag a URL as dangerous, but actually explained why. That thinking led to Dark Netra: an intelligent malicious URL detection system that combines machine learning with a clean, accessible interface.</p>
+                        <p>I led the project from concept to deployment, working alongside a talented team who brought it to life across frontend, backend, and ML. The goal was always to make something that felt real and usable, not just a college project that lives in a zip file.</p>
+                        <p>Under the hood, Dark Netra analyzes input URLs using trained ML models to classify them as Safe, Suspicious, or Malicious and surfaces the reasoning behind each result. Built on React.js for the frontend and FastAPI/Flask on the backend, with Scikit learn powering the predictions, the system was designed to be fast, reliable, and easy to understand for non-technical users too.</p>
+                        <p>It's deployed and live. And it's just version one.</p>
+                    </div>
+                </main>
+            </div>
         </div>
         
         <footer class="footer">
