@@ -15,13 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        // Initialize state
-        let isDarkMode = body.classList.contains('dark-mode');
+        // Initialize state from localStorage or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+        let isDarkMode = savedTheme === 'dark-mode';
+        
+        // Apply initial theme
+        body.classList.toggle('dark-mode', isDarkMode);
         updateThemeAssets(isDarkMode);
         
         themeToggle.addEventListener('click', () => {
             isDarkMode = !isDarkMode;
             body.classList.toggle('dark-mode', isDarkMode);
+            localStorage.setItem('theme', isDarkMode ? 'dark-mode' : 'light-mode');
             updateThemeAssets(isDarkMode);
         });
     }
