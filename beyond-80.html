@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond:80 | Aadit Ajay</title>
+    
+    <!-- Instant Theme Check (Prevents Flickering) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+            if (savedTheme === 'dark-mode') {
+                document.documentElement.classList.add('dark-theme-active');
+            }
+        })();
+    </script>
+    <style>
+        /* Small helper to apply theme before body loads */
+        .dark-theme-active body { background-color: #0a0a0a !important; color: #ffffff !important; }
+    </style>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +60,7 @@
         
         <!-- Banner -->
         <div class="project-banner">
-            <img src="public/images/ground/beyond/banner/Frame 18.png" alt="Beyond:80 Banner" style="width: 100%; height: 100%; object-fit: cover;" loading="eager">
+            <img src="public/images/ground/beyond/banner/Frame 18.svg" alt="Beyond:80 Banner" style="width: 100%; height: 100%; object-fit: cover;" loading="eager">
         </div>
 
         <div class="project-container">
@@ -90,11 +105,11 @@
                 <h2 class="section-title">In The Frame</h2>
                 <p>Moments from the ground the energy, the people, the work.</p>
                 <div class="gallery-grid">
-                    <img src="public/images/ground/beyond/images/Frame 5.png" alt="Gallery Image" class="gallery-img" loading="lazy">
-                    <img src="public/images/ground/beyond/images/Frame 6.png" alt="Gallery Image" class="gallery-img" loading="lazy">
-                    <img src="public/images/ground/beyond/images/Frame 7.png" alt="Gallery Image" class="gallery-img" loading="lazy">
-                    <img src="public/images/ground/beyond/images/Frame 8.png" alt="Gallery Image" class="gallery-img" loading="lazy">
-                    <img src="public/images/ground/beyond/images/Frame 9.png" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/beyond/images/Frame 5.svg" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/beyond/images/Frame 6.svg" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/beyond/images/Frame 7.svg" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/beyond/images/Frame 8.svg" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/beyond/images/Frame 9.svg" alt="Gallery Image" class="gallery-img" loading="lazy">
                 </div>
             </section>
         </div>

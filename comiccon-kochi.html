@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comic Con Kochi | Aadit Ajay</title>
+    
+    <!-- Instant Theme Check (Prevents Flickering) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+            if (savedTheme === 'dark-mode') {
+                document.documentElement.classList.add('dark-theme-active');
+            }
+        })();
+    </script>
+    <style>
+        /* Small helper to apply theme before body loads */
+        .dark-theme-active body { background-color: #0a0a0a !important; color: #ffffff !important; }
+    </style>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +60,7 @@
         
         <!-- Banner -->
         <div class="project-banner">
-            <img src="public/images/ground/comic/banner/banner.jpg" alt="Comic Con Kochi Banner" style="width: 100%; height: 100%; object-fit: cover;" loading="eager">
+            <img src="public/images/ground/comic/banner/Frame 21 (1).svg" alt="Comic Con Kochi Banner" style="width: 100%; height: 100%; object-fit: cover;" loading="eager">
         </div>
 
         <div class="project-container">
@@ -90,6 +105,7 @@
                 <h2 class="section-title">In The Frame</h2>
                 <p>The cosplay, the crowds, the culture captured.</p>
                 <div class="gallery-grid">
+                    <!-- Images to be added -->
                     <div style="background: #111; aspect-ratio: 16/9; border-radius: 16px; display: flex; align-items: center; justify-content: center; opacity: 0.5;">Image coming soon</div>
                     <div style="background: #111; aspect-ratio: 16/9; border-radius: 16px; display: flex; align-items: center; justify-content: center; opacity: 0.5;">Image coming soon</div>
                     <div style="background: #111; aspect-ratio: 16/9; border-radius: 16px; display: flex; align-items: center; justify-content: center; opacity: 0.5;">Image coming soon</div>

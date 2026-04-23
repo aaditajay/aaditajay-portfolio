@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Netra | Aadit Ajay</title>
+    
+    <!-- Instant Theme Check (Prevents Flickering) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark-mode';
+            if (savedTheme === 'dark-mode') {
+                document.documentElement.classList.add('dark-theme-active');
+            }
+        })();
+    </script>
+    <style>
+        /* Small helper to apply theme before body loads */
+        .dark-theme-active body { background-color: #0a0a0a !important; color: #ffffff !important; }
+    </style>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -19,15 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const savedTheme = localStorage.getItem('theme') || 'dark-mode';
         let isDarkMode = savedTheme === 'dark-mode';
         
+        const applyTheme = (isDark) => {
+            body.classList.toggle('dark-mode', isDark);
+            updateThemeAssets(isDark);
+        };
+
         // Apply initial theme
-        body.classList.toggle('dark-mode', isDarkMode);
-        updateThemeAssets(isDarkMode);
+        applyTheme(isDarkMode);
         
         themeToggle.addEventListener('click', () => {
             isDarkMode = !isDarkMode;
-            body.classList.toggle('dark-mode', isDarkMode);
             localStorage.setItem('theme', isDarkMode ? 'dark-mode' : 'light-mode');
-            updateThemeAssets(isDarkMode);
+            applyTheme(isDarkMode);
+        });
+
+        // Listen for theme changes in other tabs
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                isDarkMode = e.newValue === 'dark-mode';
+                applyTheme(isDarkMode);
+            }
         });
     }
 
