@@ -24,6 +24,7 @@
 </head>
 
 <body class="dark-mode">
+    <img src="public/images/theme/moon/moon-icon-33-removebg-preview.png" alt="Toggle Theme" class="theme-toggle" id="theme-toggle">
     <div class="custom-cursor"></div>
     <a href="index.html" class="logo" style="text-decoration: none; cursor: pointer;">AA.</a>
     
@@ -44,7 +45,7 @@
         
         <!-- Banner -->
         <div class="project-banner">
-            <img src="public/images/ground/mutate/banner/Frame 19.png" alt="Mutate '26 Banner" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="public/images/ground/mutate/banner/Frame 19.png" alt="Mutate '26 Banner" style="width: 100%; height: 100%; object-fit: cover;" loading="eager">
         </div>
 
         <div class="project-container">
@@ -89,12 +90,12 @@
                 <h2 class="section-title">In The Frame</h2>
                 <p>Moments from the ground - the energy, the people, the work.</p>
                 <div class="gallery-grid">
-                    <img src="public/images/ground/mutate/images/Frame 12.png" alt="Gallery Image" class="gallery-img">
-                    <img src="public/images/ground/mutate/images/Frame 13.png" alt="Gallery Image" class="gallery-img">
-                    <img src="public/images/ground/mutate/images/Frame 14.png" alt="Gallery Image" class="gallery-img">
-                    <img src="public/images/ground/mutate/images/Frame 15.png" alt="Gallery Image" class="gallery-img">
-                    <img src="public/images/ground/mutate/images/Frame 16.png" alt="Gallery Image" class="gallery-img">
-                    <img src="public/images/ground/mutate/images/Frame 17.png" alt="Gallery Image" class="gallery-img">
+                    <img src="public/images/ground/mutate/images/Frame 12.png" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/mutate/images/Frame 13.png" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/mutate/images/Frame 14.png" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/mutate/images/Frame 15.png" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/mutate/images/Frame 16.png" alt="Gallery Image" class="gallery-img" loading="lazy">
+                    <img src="public/images/ground/mutate/images/Frame 17.png" alt="Gallery Image" class="gallery-img" loading="lazy">
                 </div>
             </section>
         </div>
@@ -117,27 +118,6 @@
         </footer>
     </div>
 
-    <script>
-        // Initialize Lenis for Smooth Scrolling
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // Simple Entrance Animations
-        gsap.from('.project-title-area', { y: 30, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
-        gsap.from('.project-text-content p', { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: 'power3.out', delay: 0.4 });
-        gsap.from('.event-bubble', { y: 20, opacity: 0, duration: 1, stagger: 0.1, ease: 'power3.out', delay: 0.6 });
-        gsap.from('.gallery-img', { y: 30, opacity: 0, duration: 1, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.gallery-grid', start: 'top 85%' } });
-    </script>
+    <script src="project.js"></script>
 </body>
 </html>

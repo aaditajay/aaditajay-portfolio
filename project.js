@@ -1,4 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // 0. Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const favicon = document.getElementById('favicon');
+    const body = document.body;
+    
+    if (themeToggle) {
+        const updateThemeAssets = (isDark) => {
+            if (isDark) {
+                themeToggle.src = 'public/images/theme/sun/pngtree-vector-sun-icon-png-image_1638731-removebg-preview.png';
+                favicon.href = 'public/images/icon/dark_favicon.png';
+            } else {
+                themeToggle.src = 'public/images/theme/moon/moon-icon-33-removebg-preview.png';
+                favicon.href = 'public/images/icon/light_favicon.png';
+            }
+        };
+
+        // Initialize state
+        let isDarkMode = body.classList.contains('dark-mode');
+        updateThemeAssets(isDarkMode);
+        
+        themeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            body.classList.toggle('dark-mode', isDarkMode);
+            updateThemeAssets(isDarkMode);
+        });
+    }
+
     // 1. Initialize Lenis for Smooth Scrolling
     const lenis = new Lenis({
         duration: 1.2,
@@ -105,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         renderCursor();
         
-        const hoverElements = document.querySelectorAll('a, button');
+        const hoverElements = document.querySelectorAll('a, button, #theme-toggle');
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
