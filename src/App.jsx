@@ -496,7 +496,7 @@ function App() {
                                 </p>
                             </div>
                             <div className="about-image-wrap">
-                                <img src="/images/about/1000316139 (2).png" alt="Aadit Ajay" className="about-img" />
+                                <img src="/images/about/about-pfp.png" alt="Aadit Ajay" className="about-img" />
                             </div>
                         </div>
                     </div>
