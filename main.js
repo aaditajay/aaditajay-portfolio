@@ -70,6 +70,116 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // --- Preloader Logic ---
+    const preloader = document.querySelector('.preloader');
+    const loaderText = document.querySelector('.loader-text');
+    const progressBar = document.querySelector('.progress-bar');
+    
+    if (preloader) {
+        const pt = gsap.timeline();
+        pt.fromTo(loaderText, 
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        )
+        .to(progressBar, {
+            width: "100%",
+            duration: 1.5,
+            ease: "power2.inOut"
+        })
+        .to(preloader, {
+            y: "-100%",
+            opacity: 0,
+            duration: 1,
+            ease: "power4.inOut",
+            onComplete: () => preloader.style.display = 'none'
+        });
+    }
+
+    // --- New Hero Interactivity ---
+    const newHeroImage = document.querySelector('.new-hero-img');
+    const newHeroLeft = document.querySelector('.new-hero-left');
+    const newHeroRight = document.querySelector('.new-hero-right');
+    const newHeroBgText = document.querySelector('.new-hero-bg-text');
+    const newHeroContainer = document.querySelector('.new-hero-container');
+
+    if (newHeroContainer && newHeroImage && window.innerWidth > 768) {
+        const tl = gsap.timeline({ delay: 0.2 });
+
+        tl.fromTo(newHeroBgText, 
+            { opacity: 0, scale: 0.95 }, 
+            { opacity: 0.03, scale: 1, duration: 2, ease: "power3.out" }
+        )
+        .fromTo(newHeroImage, 
+            { y: 80, opacity: 0, filter: 'grayscale(100%) contrast(100%) blur(10px)' }, 
+            { y: 0, opacity: 1, filter: 'grayscale(100%) contrast(110%) blur(0px)', duration: 1.5, ease: "power4.out" },
+            "-=1.5"
+        )
+        .fromTo(newHeroLeft.children, 
+            { x: -50, opacity: 0 }, 
+            { x: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out" },
+            "-=1"
+        )
+        .fromTo(newHeroRight.children,
+            { x: 50, opacity: 0 },
+            { x: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out" },
+            "-=1"
+        );
+
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            
+            const moveX = (clientX - centerX) / centerX;
+            const moveY = (clientY - centerY) / centerY;
+            
+            const xPos = moveX * 60;
+            const yPos = moveY * 60;
+            
+            gsap.to(newHeroImage, {
+                x: xPos * 1.5,
+                y: yPos * 1.5,
+                rotationY: xPos * 0.2,
+                rotationX: -yPos * 0.2,
+                duration: 1.2,
+                ease: 'power2.out',
+                overwrite: 'auto'
+            });
+
+            gsap.to(newHeroBgText, {
+                x: -xPos * 2,
+                y: -yPos * 2,
+                duration: 2,
+                ease: 'power2.out',
+                overwrite: 'auto'
+            });
+
+            gsap.to(newHeroLeft, {
+                x: -xPos * 0.8,
+                y: -yPos * 0.8,
+                duration: 1.5,
+                ease: 'power2.out',
+                overwrite: 'auto'
+            });
+
+            gsap.to(newHeroRight, {
+                x: xPos * 0.8,
+                y: yPos * 0.8,
+                duration: 1.5,
+                ease: 'power2.out',
+                overwrite: 'auto'
+            });
+        });
+
+        newHeroImage.addEventListener("mouseenter", () => {
+            gsap.to(newHeroImage, { filter: 'grayscale(0%) contrast(110%) blur(0px)', scale: 1.05, duration: 0.8, ease: "power2.out" });
+        });
+        
+        newHeroImage.addEventListener("mouseleave", () => {
+            gsap.to(newHeroImage, { filter: 'grayscale(100%) contrast(110%) blur(0px)', scale: 1, duration: 0.8, ease: "power2.out" });
+        });
+    }
+
     // 2. Initialize GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 

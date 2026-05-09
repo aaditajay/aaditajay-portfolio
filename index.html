@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@500;600;700&display=swap"
         rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" id="favicon" href="public/images/icon/dark_favicon.png">
@@ -42,6 +42,14 @@
 </head>
 
 <body class="dark-mode">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader-box">
+            <h1 class="loader-text">LOADING PORTFOLIO</h1>
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
     <img src="public/images/theme/moon/moon-icon-33-removebg-preview.png" alt="Toggle Theme" class="theme-toggle"
         id="theme-toggle">
     <div class="custom-cursor"></div>
@@ -62,10 +70,33 @@
         <div id="smooth-content">
 
             <!-- Landing Section -->
-            <section class="landing" id="landing">
-                <div class="landing-content">
-                    <h1 class="hero-title">AADIT AJAY</h1>
-                    <p class="hero-subtitle">Community Builder • Project Manager • Strategist</p>
+            <section class="landing new-hero-container" id="landing">
+                <!-- Background Large Text spanning across -->
+                <div class="new-hero-bg-text">
+                    PROJECT MANAGER
+                </div>
+
+                <!-- Main Center Image -->
+                <div class="new-hero-img-wrap">
+                    <img src="public/images/profile/1000316202.jpg" alt="Aadit Ajay" class="new-hero-img">
+                </div>
+
+                <!-- Left Side Typography -->
+                <div class="new-hero-left">
+                    <div class="new-hero-row">
+                        <span class="hl-color">A</span><span class="ac-color">adit</span>
+                    </div>
+                    <div class="new-hero-row">
+                        <span class="hl-color">A</span><span class="ac-color">jay</span>
+                    </div>
+                </div>
+
+                <!-- Right Side Typography -->
+                <div class="new-hero-right">
+                    <div class="right-line solid-text">PROJECT</div>
+                    <div class="right-line outline-text">MANAGER</div>
+                    <div class="right-line amp-text">&</div>
+                    <div class="right-line outline-text">DEVELOPER</div>
                 </div>
 
                 <div class="trusted-by">
