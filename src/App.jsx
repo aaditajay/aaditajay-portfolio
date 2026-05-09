@@ -20,10 +20,10 @@ function App() {
         
         if (isDark) {
             if (themeToggleImg) themeToggleImg.src = '/images/theme/sun/pngtree-vector-sun-icon-png-image_1638731-removebg-preview.png';
-            if (favIconLink) favIconLink.href = '/images/webicon/dark/Frame 28 (1).png';
+            if (favIconLink) favIconLink.href = '/images/webicon/dark/favicon-dark.png';
         } else {
             if (themeToggleImg) themeToggleImg.src = '/images/theme/moon/moon-icon-33-removebg-preview.png';
-            if (favIconLink) favIconLink.href = '/images/webicon/light/Frame 29 (2).png';
+            if (favIconLink) favIconLink.href = '/images/webicon/light/favicon-light.png';
         }
     };
 
