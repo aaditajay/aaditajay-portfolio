@@ -800,6 +800,7 @@ function App() {
                                 <p>&copy; 2026 Aadit Ajay. All rights reserved. | Branded in <i className="fab fa-figma"></i> Figma</p>
                             </div>
                             <div className="footer-right">
+                                <p style={{opacity: 0.5, fontSize: '10px'}}>v1.0.1-rollback-verified</p>
                                 <p>Made with 
                                     <span className="ag-logo-wrapper">
                                         <img src="/images/antigravity/light/antigravity-icon__one-color.png" className="ag-img light-logo" alt="Antigravity" />
